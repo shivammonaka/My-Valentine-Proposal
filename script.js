@@ -49,6 +49,19 @@ const imagesrc = [
 
 let messageIndex = 0, imageIndex = 0, fontSize = 1.5*16;
 
+function handleMusic() {
+    const audio = document.querySelector('#background-audio'); // Select audio
+    const musicButton = document.querySelector('.music-button'); // Select button
+
+    if (audio.paused) {
+        audio.play();
+        musicButton.textContent = "Pause Music"; // Change button text when playing
+    } else {
+        audio.pause();
+        musicButton.textContent = "Play Music"; // Change back when paused
+    }
+}
+
 function handleNoClick() {
     const noButton = document.querySelector('.no-button');
     const yesButton = document.querySelector('.yes-button');
@@ -62,5 +75,6 @@ function handleNoClick() {
 }
 
 function handleYesClick() {
-    window.location.href = "yes_page.html";
+    window.open("yes_page.html", "_blank");
+    // window.location.href = "yes_page.html";
 }
